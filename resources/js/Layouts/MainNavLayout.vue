@@ -17,13 +17,15 @@ import FacebookMessenger from 'vue-material-design-icons/FacebookMessenger.vue';
 import Bell from 'vue-material-design-icons/Bell.vue';
 import Logout from 'vue-material-design-icons/Logout.vue';
 
+import CropperModal from '@/Components/CropperModal.vue';
+
 /**
  * Store
  */
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs('useGeneral');
+const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 /**
  * Getting logged user
@@ -152,4 +154,9 @@ const showMenu = ref(false);
         <!-- /Nav Right -->
     </div>
     <slot />
+
+    <CropperModal
+        v-if="isCropperModal"
+        @showModal="isCropperModal = false"
+    />
 </template>

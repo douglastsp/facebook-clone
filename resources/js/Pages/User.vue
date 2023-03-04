@@ -16,7 +16,7 @@ import Pen from 'vue-material-design-icons/TelevisionPlay.vue';
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 const useGeneral = useGeneralStore();
-const { isCropperModal, isImageDisplay } = storeToRefs('useGeneral');
+const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 /**
  * Define Props
