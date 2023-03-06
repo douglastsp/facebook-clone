@@ -193,7 +193,8 @@ const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
                         </div>
                         <div class="flex flex-wrap items-center justify-start w-full">
                             <span class="w-1/3">
-                                <img 
+                                <img
+                                    @click="isImageDisplay = 'https://picsum.photos/id/78/800/800'" 
                                     src="https://picsum.photos/id/78/300/300"
                                     alt="" 
                                     class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
