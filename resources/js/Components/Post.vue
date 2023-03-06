@@ -16,7 +16,7 @@ import Delete from 'vue-material-design-icons/Delete.vue';
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 const useGeneral = useGeneralStore();
-const { isImageDisplay } = storeToRefs('useGeneral');
+const { isImageDisplay } = storeToRefs(useGeneral);
 
 /**
  * Define Props
@@ -60,7 +60,12 @@ const form = reactive({ comment: null })
         <div class="px-5 pb-2 text-[17px] font-semibold">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
         </div>
-        <img src="https://picsum.photos/id/189/800/800" alt="post-image" class="mx-auto cursor-pointer">
+        <img
+            @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'"  
+            src="https://picsum.photos/id/189/800/800" 
+            alt="post-image" 
+            class="mx-auto cursor-pointer"
+        >
         <!-- /Post -->
 
         <!-- Likes -->
