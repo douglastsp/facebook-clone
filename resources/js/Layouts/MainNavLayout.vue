@@ -19,6 +19,7 @@ import Logout from 'vue-material-design-icons/Logout.vue';
 
 import CropperModal from '@/Components/CropperModal.vue';
 import ImageDisplay from '@/Components/ImageDisplay.vue';
+import CreatePostOverlay from '@/Components/CreatePostOverlay.vue';
 
 /**
  * Store
@@ -156,6 +157,11 @@ const showMenu = ref(false);
     </div>
     <slot />
 
+    <CreatePostOverlay
+        v-if="isPostOverlay"
+        @showModal="isPostOverlay = false"
+    />
+
     <CropperModal
         v-if="isCropperModal"
         @showModal="isCropperModal = false"
@@ -164,4 +170,5 @@ const showMenu = ref(false);
     <ImageDisplay
         v-if="isImageDisplay"
     />
+
 </template>
