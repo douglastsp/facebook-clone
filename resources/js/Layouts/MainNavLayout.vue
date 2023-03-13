@@ -18,6 +18,8 @@ import Bell from 'vue-material-design-icons/Bell.vue';
 import Logout from 'vue-material-design-icons/Logout.vue';
 
 import CropperModal from '@/Components/CropperModal.vue';
+import ImageDisplay from '@/Components/ImageDisplay.vue';
+import CreatePostOverlay from '@/Components/CreatePostOverlay.vue';
 
 /**
  * Store
@@ -45,7 +47,7 @@ const showMenu = ref(false);
         <div id="NavLeft" class="flex items-center justify-start w-[260px]">
             <!-- Logo -->
             <Link href="/" class="pl-3 min-w-[55px]">
-                FB
+                <img src="/images/icons/FacebookLogoCircle.png" alt="FacebookLogo" width="40">
             </Link>
             <!-- /Logo -->
             <!-- Search -->
@@ -155,8 +157,18 @@ const showMenu = ref(false);
     </div>
     <slot />
 
+    <CreatePostOverlay
+        v-if="isPostOverlay"
+        @showModal="isPostOverlay = false"
+    />
+
     <CropperModal
         v-if="isCropperModal"
         @showModal="isCropperModal = false"
     />
+
+    <ImageDisplay
+        v-if="isImageDisplay"
+    />
+
 </template>
