@@ -15,7 +15,7 @@ import EmoticonOutline from 'vue-material-design-icons/EmoticonOutline.vue';
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 const useGeneral = useGeneralStore();
-const { isPostOverlay } = storeToRefs('useGeneral');
+const { isPostOverlay } = storeToRefs(useGeneral);
 
 /**
  * Define Props
